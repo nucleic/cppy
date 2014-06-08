@@ -9,4 +9,4 @@ import os
 
 
 def get_include():
-    return os.path.join(os.path.dirname(__file__), 'include', 'cppy')
+    return os.path.join(os.path.dirname(__file__), 'include')
