@@ -7,13 +7,9 @@
 |----------------------------------------------------------------------------*/
 #pragma once
 
-#include <Python.h>
 #include <string>
-
-
-#if PY_MAJOR_VERSION >= 3
-#define IS_PY3K
-#endif
+#include <Python.h>
+#include "defines.h"
 
 
 namespace cppy
