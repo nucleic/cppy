@@ -8,5 +8,8 @@
 import os
 
 
+__version__ = 1  # kept in sync with CPPY_VERSION
+
+
 def get_include():
     return os.path.join(os.path.dirname(__file__), 'include')

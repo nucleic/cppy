@@ -10,7 +10,7 @@ from distutils.core import setup
 
 setup(
     name='cppy',
-    version='0.1',
+    version='1',
     author='The Nucleic Development Team',
     author_email='sccolbert@gmail.com',
     url='https://github.com/nucleic/cppy',

@@ -151,6 +151,14 @@ public:
         Py_XDECREF( temp );
     }
 
+    void set( const ptr& other )
+    {
+        PyObject* temp = m_ob;
+        m_ob = other.get();
+        Py_XINCREF( m_obj );
+        Py_XDECREF( temp );
+    }
+
     PyObject* release()
     {
         PyObject* temp = m_ob;
