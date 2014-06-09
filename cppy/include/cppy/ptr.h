@@ -155,7 +155,7 @@ public:
     {
         PyObject* temp = m_ob;
         m_ob = other.get();
-        Py_XINCREF( m_obj );
+        Py_XINCREF( m_ob );
         Py_XDECREF( temp );
     }
 
