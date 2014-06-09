@@ -11,7 +11,6 @@
 namespace cppy
 {
 
-
 inline PyObject* bad_internal_call( const char* message )
 {
     PyErr_SetString( PyExc_SystemError, message );
@@ -66,6 +65,5 @@ inline PyObject* attribute_error( PyObject* ob, const char* attr )
                   attr );
     return 0;
 }
-
 
 } // namespace cppy

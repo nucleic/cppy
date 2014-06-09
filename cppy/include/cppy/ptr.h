@@ -15,7 +15,6 @@
 namespace cppy
 {
 
-
 template <typename T>
 inline T* incref( T* ob )
 {
@@ -507,6 +506,5 @@ inline bool operator==( const ptr& lhs, PyObject* rhs )
 {
     return lhs.get() == rhs;
 }
-
 
 } // namespace cppy
