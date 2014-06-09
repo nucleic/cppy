@@ -48,6 +48,38 @@ inline T* xdecref( T* ob )
 
 
 template <typename T>
+inline PyObject* obincref( T* ob )
+{
+    Py_INCREF( ob );
+    return reinterpret_cast<PyObject*>( ob );
+}
+
+
+template <typename T>
+inline PyObject* obxincref( T* ob )
+{
+    Py_XINCREF( ob );
+    return reinterpret_cast<PyObject*>( ob );
+}
+
+
+template <typename T>
+inline PyObject* obdecref( T* ob )
+{
+    Py_DECREF( ob );
+    return reinterpret_cast<PyObject*>( ob );
+}
+
+
+template <typename T>
+inline PyObject* obxdecref( T* ob )
+{
+    Py_XDECREF( ob );
+    return reinterpret_cast<PyObject*>( ob );
+}
+
+
+template <typename T>
 inline void clear( T** ob )
 {
     T* temp = *ob;
