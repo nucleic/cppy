@@ -8,7 +8,7 @@
 import os
 
 
-__version__ = 1  # kept in sync with CPPY_VERSION
+__version__ = 2  # kept in sync with CPPY_VERSION
 
 
 def get_include():
