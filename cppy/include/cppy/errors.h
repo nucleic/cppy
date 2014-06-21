@@ -13,7 +13,7 @@
 namespace cppy
 {
 
-inline PyObject* bad_internal_call( const char* message )
+inline PyObject* system_error( const char* message )
 {
     PyErr_SetString( PyExc_SystemError, message );
     return 0;
