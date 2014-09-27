@@ -1,0 +1,6 @@
+include *.md
+recursive-include cppy *.py
+recursive-include cppy *.h
+prune .git
+prune dist
+prune build
