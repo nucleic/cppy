@@ -9,7 +9,11 @@
 
 #include <Python.h>
 
-#define CPPY_VERSION 3
+#define CPPY_MAJOR_VERSION 1
+#define CPPY_MINOR_VERSION 0
+#define CPPY_PATCH_VERSION 0
+
+#define CPPY_VERSION "1.0.0"
 
 #if PY_MAJOR_VERSION >= 3
 #define IS_PY3K

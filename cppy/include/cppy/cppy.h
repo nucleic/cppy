@@ -7,7 +7,6 @@
 |----------------------------------------------------------------------------*/
 #pragma once
 
-#include <Python.h>
 #include "defines.h"
 #include "errors.h"
 #include "ptr.h"
