@@ -161,7 +161,11 @@ public:
 
 	bool is_int() const
 	{
+#ifdef IS_PY3K
+		return PyLong_Check( m_ob ) != 0;
+#else
 		return PyInt_Check( m_ob ) != 0;
+#endif
 	}
 
 	bool is_float() const
