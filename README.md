@@ -1,4 +1,7 @@
 cppy
 ====
 
-A collection of C++ headers which make it easier to write Python C extension modules.
+A small C++ header library which makes it easier to write Python extension
+modules. The primary feature is a PyObject smart pointer which automatically
+handles reference counting and provides convenience methods for performing
+common object operations.
