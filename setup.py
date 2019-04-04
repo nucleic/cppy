@@ -1,16 +1,18 @@
 #------------------------------------------------------------------------------
-# Copyright (c) 2014, Nucleic
+# Copyright (c) 2014-2019, Nucleic
 #
 # Distributed under the terms of the BSD 3-Clause License.
 #
 # The full license is in the file LICENSE, distributed with this software.
 #------------------------------------------------------------------------------
-from distutils.core import setup
+from setuptools.core import setup
 
+# Before releasing the version needs to be updated here and in
+# docs/source/conf.py
 
 setup(
     name='cppy',
-    version='1.0.2',
+    version='1.1.0',
     author='The Nucleic Development Team',
     author_email='sccolbert@gmail.com',
     url='https://github.com/nucleic/cppy',
