@@ -24,4 +24,4 @@ before_install:
 install:
   - python setup.py develop
 script:
-  - py.test py/tests
+  - pytest tests
