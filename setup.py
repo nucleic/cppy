@@ -7,8 +7,10 @@
 #------------------------------------------------------------------------------
 from setuptools import setup
 
-# Before releasing the version needs to be updated here and in
-# docs/source/conf.py
+# Before releasing the version needs to be updated in:
+# - setup.py
+# - cppy/__init__.py
+# - docs/source/conf.py
 
 setup(
     name='cppy',

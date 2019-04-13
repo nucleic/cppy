@@ -5,17 +5,13 @@
 #
 # The full license is in the file LICENSE, distributed with this software.
 #------------------------------------------------------------------------------
-__major_version__ = 1
-__minor_version__ = 1
-__patch_version__ = 0
+"""Test getting the include directory.
 
+"""
 
-__version_info__ = (__major_version__, __minor_version__, __patch_version__)
+def test_getting_include_directory():
+    """Test getting the include directory.
 
-
-__version__ = '%s.%s.%s' % __version_info__
-
-
-def get_include():
-    import os
-    return os.path.join(os.path.dirname(__file__), 'include')
+    """
+    from cppy import get_include
+    assert get_include()
