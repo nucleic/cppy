@@ -5,7 +5,7 @@
 #
 # The full license is in the file LICENSE, distributed with this software.
 #------------------------------------------------------------------------------
-from setuptools.core import setup
+from setuptools import setup
 
 # Before releasing the version needs to be updated here and in
 # docs/source/conf.py
