@@ -21,6 +21,9 @@ To use cppy in your extension (written in C++), you simply need to include it.
 
     #include <cppy/cppy.h>
 
+Cppy includes Python.h so when including cppy.h you do not need to also include
+Python.h.
+
 Every functions, classes exposed by cppy are stored in the `cppy` namespace.
 
 .. code:: c++
