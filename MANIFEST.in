@@ -1,6 +1,15 @@
-include *.md
+include MANIFEST.in
+include *.rst
+include LICENSE
 recursive-include cppy *.py
 recursive-include cppy *.h
+recursive-include docs/source *.rst
+recursive-include docs/source *.png
+recursive-include docs/source *.py
+include docs/make.bat
+include docs/Makefile
+recursive-include tests *.py
 prune .git
 prune dist
 prune build
+prune docs/build

@@ -19,7 +19,7 @@ setup(
     author_email='sccolbert@gmail.com',
     url='https://github.com/nucleic/cppy',
     description='C++ headers for C extension development',
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     packages=['cppy'],
     package_data={'cppy': ['include/cppy/*.h']},
 )
