@@ -289,7 +289,7 @@ public:
 		return richcmp( other.get(), opid );
 	}
 
-	long hash() const
+	Py_hash_t hash() const
 	{
 		return PyObject_Hash( m_ob );
 	}
