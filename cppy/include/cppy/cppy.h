@@ -7,6 +7,10 @@
 |----------------------------------------------------------------------------*/
 #pragma once
 
+#define pyobject_cast( o ) ( reinterpret_cast<PyObject*>( o ) )
+#define pytype_cast( o ) ( reinterpret_cast<PyTypeObject*>( o ) )
+#define void_cast( o ) ( reinterpret_cast<void*>( o ) )
+
 #include "defines.h"
 #include "errors.h"
 #include "ptr.h"

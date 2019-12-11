@@ -161,11 +161,7 @@ public:
 
 	bool is_int() const
 	{
-#ifdef IS_PY3K
 		return PyLong_Check( m_ob ) != 0;
-#else
-		return PyInt_Check( m_ob ) != 0;
-#endif
 	}
 
 	bool is_float() const
@@ -190,20 +186,12 @@ public:
 
 	bool is_bytes() const
 	{
-#ifdef IS_PY3K
 		return PyBytes_Check( m_ob ) != 0;
-#else
-		return PyString_Check( m_ob ) != 0;
-#endif
 	}
 
 	bool is_str() const
 	{
-#ifdef IS_PY3K
 		return PyUnicode_Check( m_ob ) != 0;
-#else
-		return PyString_Check( m_ob ) != 0;
-#endif
 	}
 
 	bool is_unicode() const
@@ -273,20 +261,12 @@ public:
 
 	PyObject* bytes() const
 	{
-#ifdef IS_PY3K
 		return PyObject_Bytes( m_ob );
-#else
-		return PyObject_Str( m_ob );
-#endif
 	}
 
 	PyObject* unicode() const
 	{
-#ifdef IS_PY3K
 		return PyObject_Str( m_ob );
-#else
-		return PyObject_Unicode( m_ob );
-#endif
 	}
 
 	Py_ssize_t length() const
@@ -309,7 +289,7 @@ public:
 		return richcmp( other.get(), opid );
 	}
 
-	long hash() const
+	Py_hash_t hash() const
 	{
 		return PyObject_Hash( m_ob );
 	}
