@@ -5,6 +5,7 @@ Cppy Release Notes
 ------------------
 - drop Python 2 support PR #3
 - add documentation and tests PR #3
+- add cast_py_tp_doc to cast "cleanly" to void* for use in PyType_Slot
 
 1.0.2 - 09/28/2014
 ------------------
