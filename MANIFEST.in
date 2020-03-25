@@ -6,6 +6,7 @@ recursive-include cppy *.h
 recursive-include docs/source *.rst
 recursive-include docs/source *.png
 recursive-include docs/source *.py
+recursive-include tests/ *.py
 include docs/make.bat
 include docs/Makefile
 recursive-include tests *.py
