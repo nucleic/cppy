@@ -28,9 +28,10 @@ reference count:
   In this situation you own a reference.
 
 - Borrowed reference:
-  Some functions (`PyList_GetItem`, `PyTuple_GetItem`) do not incref the object
-  count before returning. In that case, you have only a borrowed reference, you
-  are not responsible for decrefing the object reference count.
+  Some functions (`PyList_GetItem`, `PyTuple_GetItem`, `PyDict_GetItem`, ...)
+  do not incref the object count before returning. In that case, you have only
+  a borrowed reference, you are not responsible for decrefing the object
+  reference count.
 
 Borrowed references allow to avoid the cost of increfing/decrefing which is
 nice. However since you do not own the reference, if the object referenced is
