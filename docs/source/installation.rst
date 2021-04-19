@@ -1,7 +1,7 @@
 Installation and use with setuptools
 ====================================
 
-Since cppy is nothing else than a collection of header that are only compiled
+Since Cppy is nothing else than a collection of header that are only compiled
 when used, installing it is extremely straightforward using pip::
 
     $ pip install cppy
@@ -12,10 +12,10 @@ Github::
     $ pip install https://github.com/nucleic/cppy
 
 
-Using cppy in an extensions
+Using Cppy in an extensions
 ---------------------------
 
-To use cppy in your extension (written in C++), you simply need to include it.
+To use Cppy in your extension (written in C++), you simply need to include it.
 
 .. code:: c++
 
@@ -24,7 +24,7 @@ To use cppy in your extension (written in C++), you simply need to include it.
 Cppy includes Python.h so when including cppy.h you do not need to also include
 Python.h.
 
-Every functions, classes exposed by cppy are stored in the `cppy` namespace.
+Every functions, classes exposed by Cppy are stored in the `cppy` namespace.
 
 .. code:: c++
 
@@ -35,7 +35,7 @@ Use with setuptools
 -------------------
 
 Cppy is only needed during the installation step of the projects using it. The
-following example setup.py script illustrates how to use cppy without requiring
+following example setup.py script illustrates how to use Cppy without requiring
 it to be installed before `setup.py` is run.
 
 .. code:: python
