@@ -18,7 +18,7 @@ follows:
 Functions
 ---------
 
-Functions taking two arguments provide sensible pre-formated error messages.
+Functions taking two arguments provide sensible pre-formatted error messages.
 
 .. code:: c++
 
