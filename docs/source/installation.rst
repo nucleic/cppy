@@ -7,7 +7,7 @@ when used, installing it is extremely straightforward using pip::
     $ pip install cppy
 
 If you want to run the development version, you can install directly from
-Github::
+GitHub::
 
     $ pip install https://github.com/nucleic/cppy
 
