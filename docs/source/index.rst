@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to cppy's documentation!
+Welcome to Cppy's documentation!
 ================================
 
-Cpppy is a small C++ header library which makes it easier to write Python
+Cppy is a small C++ header library which makes it easier to write Python
 extension modules. The primary feature is a PyObject smart pointer which
 automatically handles reference counting and provides convenience methods for
 performing common object operations.
