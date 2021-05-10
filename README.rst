@@ -1,4 +1,4 @@
-cppy
+Cppy
 ====
 
 .. image:: https://travis-ci.org/nucleic/cppy.svg?branch=master
