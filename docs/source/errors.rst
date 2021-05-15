@@ -1,7 +1,7 @@
 Error reporting
 ===============
 
-In addition to `cppy::ptr`, cppy provides a set a convenience function for
+In addition to `cppy::ptr`, cppy provides a set of convenience functions for
 reporting errors which all return a NULL pointer allowing them to be used as
 follows:
 
