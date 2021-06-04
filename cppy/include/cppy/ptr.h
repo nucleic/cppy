@@ -276,7 +276,7 @@ public:
 
 	PyTypeObject* type() const
 	{
-		return m_ob->ob_type;
+		return Py_TYPE( m_ob );
 	}
 
 	int richcmp( PyObject* other, int opid ) const

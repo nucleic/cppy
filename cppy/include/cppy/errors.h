@@ -33,7 +33,7 @@ inline PyObject* type_error( PyObject* ob, const char* expected )
 		PyExc_TypeError,
 		"Expected object of type `%s`. Got object of type `%s` instead.",
 		expected,
-		ob->ob_type->tp_name );
+		Py_TYPE( ob )->tp_name );
 	return 0;
 }
 
@@ -64,7 +64,7 @@ inline PyObject* attribute_error( PyObject* ob, const char* attr )
 	PyErr_Format(
 		PyExc_AttributeError,
 		"'%s' object has no attribute '%s'",
-		ob->ob_type->tp_name,
+		Py_TYPE( ob )->tp_name,
 		attr );
 	return 0;
 }

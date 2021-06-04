@@ -1,7 +1,11 @@
 Cppy Release Notes
-===================
+==================
 
-1.1.0 - unreleased
+1.1.1 - unreleased
+------------------
+- do not access directly ob_type on PyObject use Py_TYPE
+
+1.1.0 - 06/25/2020
 ------------------
 - drop Python 2 support PR #3
 - add documentation and tests PR #3
