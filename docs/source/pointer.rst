@@ -22,13 +22,13 @@ function, you do not have the same responsibility with respect to that object
 reference count:
 
 - Owned references:
-  Most functions return a `new` reference which means that you  are responsible
+  Most functions return a ``new`` reference which means that you  are responsible
   for decrefing the object reference count when you are done with it (basically
   the function increfed the object reference count before returning).
   In this situation you own a reference.
 
 - Borrowed reference:
-  Some functions (`PyList_GetItem`, `PyTuple_GetItem`, `PyDict_GetItem`, ...)
+  Some functions (``PyList_GetItem``, ``PyTuple_GetItem``, ``PyDict_GetItem``, ...)
   do not incref the object count before returning. In that case, you have only
   a borrowed reference, you are not responsible for decrefing the object
   reference count.
@@ -48,7 +48,7 @@ it needs to store the object, in for example a C structure, it should incref
 it. Note that this does not apply in general to Python container since those
 are manipulated using functions that take care of it. There are however some
 exceptions that steals a reference, meaning that you are not the owner of the
-reference after the call. `PyList_SetItem`, for example, steal references.
+reference after the call. ``PyList_SetItem``, for example, steal references.
 
 An easy way to get reference count wrong is forgetting to decref some
 intermediate object before leaving a function. This is particularly true if the
@@ -68,7 +68,7 @@ documentation.
 Cppy smart pointer class
 ------------------------
 
-Cppy smart pointer (`cppy::ptr`) can be initialized with a pointer to a Python
+Cppy smart pointer (``cppy::ptr``) can be initialized with a pointer to a Python
 object as follows:
 
 .. code:: c++
@@ -89,22 +89,22 @@ case you should incref it first:
 .. note::
 
     Cppy provides convenient inline function for common reference manipulation:
-    - `cppy::incref`, `cppy::xincref`, `cppy::decref`, `cppy::xdecref` use the
+    - ``cppy::incref``, ``cppy::xincref``, ``cppy::decref``, ``cppy::xdecref`` use the
     the similarly named Python macros and return the input value.
-    - `cppy::clear`, `cppy::replace` are similar but return void.
+    - ``cppy::clear``, ``cppy::replace`` are similar but return void.
 
-You can also initialize a `cppy::ptr` from another `cppy::ptr` in which case
+You can also initialize a ``cppy::ptr`` from another ``cppy::ptr`` in which case
 the reference count will always be incremented.
 
-The main advantage provided by `cppy::ptr` is that it implements a destructor
-that will be invoked automatically by the c++ runtime when the `cppy::ptr`
+The main advantage provided by ``cppy::ptr`` is that it implements a destructor
+that will be invoked automatically by the c++ runtime when the ``cppy::ptr``
 goes out of scope. The destructor will decref the reference for you. As a
 consequence you can be sure that your reference you always be decremented when
 you leave the function.
 
 Sometimes, however, that is not what you want, because you want to return the
-reference the `cppy::ptr` manage. You can request the `cppy::ptr` to give back
-the reference using its `release` method. Lets illustrate on a tiny example:
+reference the ``cppy::ptr`` manage. You can request the ``cppy::ptr`` to give back
+the reference using its ``release`` method. Lets illustrate on a tiny example:
 
 .. code:: c++
 
@@ -114,9 +114,9 @@ the reference using its `release` method. Lets illustrate on a tiny example:
         return repr_ptr.release();
     }
 
-Function which are part of Python C-API are not aware of of `cppy::ptr` and
-when calling them you need to provide the original `PyObject*`. To access, you
-simply need to call the `get` method of the `cppy::ptr` object.
+Function which are part of Python C-API are not aware of of ``cppy::ptr`` and
+when calling them you need to provide the original ``PyObject*``. To access, you
+simply need to call the ``get`` method of the ``cppy::ptr`` object.
 
 .. code:: c++
 
@@ -128,7 +128,7 @@ simply need to call the `get` method of the `cppy::ptr` object.
         return l_ptr.release();
     }
 
-Here we see that because we use `cppy::ptr` to manage the list, we do not have
+Here we see that because we use ``cppy::ptr`` to manage the list, we do not have
 to worry about decrefing the reference if an exception occurs, the runtime
 will do it for us. If no exception occurs, we stop managing the reference and
 we are good.
@@ -138,10 +138,10 @@ example if you release too early (for example when passing the object to a
 function that may fail), you can still leak references. However it does
 alleviate some of the complexity.
 
-Cppy::ptr methods
+``cppy::ptr`` methods
 -----------------
 
-All methods that takes a `PyObject*` can also accept a `cppy::ptr`.
+All methods that takes a ``PyObject*`` can also accept a ``cppy::ptr``.
 Most names should be self-explanatory, and apart from the is\_ methods most of
 them rely on the PyObject\_ functions similarly named:
 
