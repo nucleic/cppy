@@ -1,0 +1,48 @@
+name: Continuous Integration
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - .github/workflows/ci.yml
+      - cppy/*
+      - tests/*
+      - setup.py
+
+jobs:
+  lint:
+    name: Lints Python codes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: pyflakes
+        uses: reviewdog/action-pyflakes@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: ${{ github.event_name == 'pull_request' && 'github-pr-review' || 'github-check' }}
+
+  tests:
+    name: Unit tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.6', '3.7', '3.8', '3.9', '3.10']
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+      - name: Install project
+        run: |
+          python setup.py develop
+      - name: Test with pytest
+        run: |
+          pytest tests

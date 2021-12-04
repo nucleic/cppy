@@ -1,8 +1,8 @@
 Cppy
 ====
 
-.. image:: https://travis-ci.org/nucleic/cppy.svg?branch=master
-    :target: https://travis-ci.org/nucleic/cppy
+.. image:: https://github.com/nucleic/cppy/actions/workflows/ci.yml/badge.svg
+    :target: https://github.com/nucleic/cppy/actions/workflows/ci.yml
 
 A small C++ header library which makes it easier to write Python extension
 modules. The primary feature is a PyObject smart pointer which automatically
