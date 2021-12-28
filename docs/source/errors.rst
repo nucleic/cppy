@@ -11,8 +11,8 @@ follows:
     {
         cppy::ptr obj_ptr( cppy::incref( obj ) );
         if( !obj_ptr.is_bool() )
-            return type_error( obj_ptr.get(), 'bool' )
-        return obj_ptr.get()
+            return type_error( obj_ptr.get(), "bool" );
+        return obj_ptr.get();
     }
 
 Functions
