@@ -139,7 +139,7 @@ function that may fail), you can still leak references. However it does
 alleviate some of the complexity.
 
 ``cppy::ptr`` methods
------------------
+---------------------
 
 All methods that takes a ``PyObject*`` can also accept a ``cppy::ptr``.
 Most names should be self-explanatory, and apart from the is\_ methods most of
