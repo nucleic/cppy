@@ -1,8 +1,10 @@
 Cppy Release Notes
 ==================
 
-1.1.1 - unreleased
+1.2.0 - unreleased
 ------------------
+- expose a build_ext subclass that can be re-used in other projects PR #16
+- use a PEP 517 compatible install procedure PR #16
 - do not access directly ob_type on PyObject use Py_TYPE
 
 1.1.0 - 06/25/2020
