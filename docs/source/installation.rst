@@ -34,9 +34,23 @@ Every functions, classes exposed by Cppy are stored in the `cppy` namespace.
 Use with setuptools
 -------------------
 
-Cppy is only needed during the installation step of the projects using it. The
-following example setup.py script illustrates how to use Cppy without requiring
-it to be installed before `setup.py` is run.
+Cppy is only needed during the installation step of the projects using it.
+
+When using a PEP 517 compatible build system, one can simply specify cppy as a
+build requirement in ```pyproject.toml``::
+
+    [build-system]
+    requires =  ["setuptools>=42", "wheel", "cppy>=1.2"]
+
+Which will ensure that cppy is available in setup.py allowing to import it at the
+top level of the module. This allows in particular to import ``CppyBuildExt``
+which enforces the use of C++11 and provide access to the cppy headers. On Windows,
+FH4 Exception Handling can be disabled by setting the CPPY_DISABLE_FH4 environment
+variable. This avoids requiring VCRUNTIME140_1.dll
+
+In one is not using a PEP 517 compatible install, the following example setup.py
+script illustrates how to use Cppy without requiring it to be installed before
+`setup.py` is run.
 
 .. code:: python
 
