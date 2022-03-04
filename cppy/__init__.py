@@ -55,3 +55,5 @@ class CppyBuildExt(build_ext):
                 ext.extra_compile_args.append("/d2FH4-")
         build_ext.build_extensions(self)
 
+
+__all__ = ["__version__", "__version_info__", "get_include", "CppyBuildExt"]
