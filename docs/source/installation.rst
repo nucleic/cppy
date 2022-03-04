@@ -9,7 +9,7 @@ when used, installing it is extremely straightforward using pip::
 If you want to run the development version, you can install directly from
 GitHub::
 
-    $ pip install https://github.com/nucleic/cppy
+    $ pip install git+https://github.com/nucleic/cppy
 
 
 Using Cppy in an extensions

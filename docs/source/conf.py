@@ -15,7 +15,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+from cppy import __version__
 
 # -- Project information -----------------------------------------------------
 
@@ -23,10 +23,8 @@ project = 'cppy'
 copyright = '2019, Nucleic team'
 author = 'Nucleic team'
 
-# The short X.Y version
-version = ''
 # The full version, including alpha/beta/rc tags
-release = '1.1.0'
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------
