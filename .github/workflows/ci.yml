@@ -32,6 +32,10 @@ jobs:
       fail-fast: false
     steps:
       - uses: actions/checkout@v2
+      - name: Get history and tags for SCM versioning to work
+        run: |
+          git fetch --prune --unshallow
+          git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
@@ -42,7 +46,7 @@ jobs:
           python -m pip install pytest
       - name: Install project
         run: |
-          python setup.py develop
+          pip install .
       - name: Test with pytest
         run: |
           pytest tests
