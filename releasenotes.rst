@@ -1,7 +1,7 @@
 Cppy Release Notes
 ==================
 
-1.2.0 - unreleased
+1.2.0 - 03/11/2022
 ------------------
 - expose a build_ext subclass that can be re-used in other projects PR #16
 - use a PEP 517 compatible install procedure PR #16
