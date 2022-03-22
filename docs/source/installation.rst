@@ -60,7 +60,7 @@ script illustrates how to use Cppy without requiring it to be installed before
     ext_modules = [
         Extension(
             'project',
-            ['module.cpp],
+            ['module.cpp'],
             include_dirs=['.'],
             language='c++',
         ),
