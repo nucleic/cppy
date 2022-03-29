@@ -9,6 +9,7 @@ on:
       - cppy/*
       - tests/*
       - setup.py
+      - pyproject.toml
 
 jobs:
   lint:
