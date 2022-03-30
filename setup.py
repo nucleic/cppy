@@ -7,14 +7,4 @@
 # ------------------------------------------------------------------------------
 from setuptools import setup
 
-setup(
-    name="cppy",
-    author="The Nucleic Development Team",
-    author_email="sccolbert@gmail.com",
-    maintainer_email="m.dartiailh@gmail.com",
-    url="https://github.com/nucleic/cppy",
-    description="C++ headers for C extension development",
-    long_description=open("README.rst").read(),
-    packages=["cppy"],
-    package_data={"cppy": ["include/cppy/*.h"]},
-)
+setup()
