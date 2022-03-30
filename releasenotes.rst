@@ -1,6 +1,10 @@
 Cppy Release Notes
 ==================
 
+1.2.1 - 03/30/2022
+------------------
+- make the pyproject.toml fully PEP 621 compliant PR #19
+
 1.2.0 - 03/11/2022
 ------------------
 - expose a build_ext subclass that can be re-used in other projects PR #16
