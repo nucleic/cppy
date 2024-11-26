@@ -1,6 +1,10 @@
 Cppy Release Notes
 ==================
 
+1.3.0 - 26/11/2024
+------------------
+- prevent liinking dynamically to MSVCP on windows
+
 1.2.1 - 03/30/2022
 ------------------
 - make the pyproject.toml fully PEP 621 compliant PR #19
