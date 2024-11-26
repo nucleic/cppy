@@ -28,7 +28,7 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
 ]
 dynamic=["version"]
-requires = ["setuptools>=61.2"]
+dependencies = ["setuptools>=61.2"]
 
 
 [project.urls]
