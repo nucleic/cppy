@@ -20,7 +20,7 @@ from cppy import __version__
 # -- Project information -----------------------------------------------------
 
 project = 'cppy'
-copyright = '2019, Nucleic team'
+copyright = '2019-2024, Nucleic team'
 author = 'Nucleic team'
 
 # The full version, including alpha/beta/rc tags
@@ -175,8 +175,3 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
-
-# -- Options for intersphinx extension ---------------------------------------
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
