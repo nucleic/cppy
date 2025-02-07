@@ -1,9 +1,13 @@
 Cppy Release Notes
 ==================
 
+1.3.1 - unreleased
+-------------------
+- on Windows link to debug runtime lib when building with a debug Python PR #29
+
 1.3.0 - 26/11/2024
 ------------------
-- prevent liinking dynamically to MSVCP on windows
+- prevent linking dynamically to MSVCP on windows
 
 1.2.1 - 03/30/2022
 ------------------
