@@ -1,7 +1,7 @@
 Cppy Release Notes
 ==================
 
-1.3.1 - unreleased
+1.3.1 - 11/02/2025
 -------------------
 - on Windows link to debug runtime lib when building with a debug Python PR #29
 
