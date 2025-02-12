@@ -35,7 +35,7 @@ jobs:
         run: |
           pip install -e .
       - name: Install graphviz
-        uses: ts-graphviz/setup-graphviz@v1
+        uses: ts-graphviz/setup-graphviz@v2
       - name: Build documentation
         run: |
           mkdir docs_output;
