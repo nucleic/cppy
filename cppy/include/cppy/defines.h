@@ -13,4 +13,4 @@
 #define CPPY_MINOR_VERSION 1
 #define CPPY_PATCH_VERSION 0
 
-#define CPPY_VERSION "1.1.0"
+#define CPPY_VERSION "1.3.1"
