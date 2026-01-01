@@ -32,7 +32,7 @@ jobs:
           cd ..
           python -m pytest cppy/tests
       - name: Store artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: cibw-sdist
           path: dist/*
@@ -61,7 +61,7 @@ jobs:
           cd ..
           python -m pytest cppy/tests
       - name: Store artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: cibw-wheel
           path: dist/*.whl
