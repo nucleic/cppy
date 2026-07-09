@@ -1,11 +1,12 @@
 # --------------------------------------------------------------------------------------
-# Copyright (c) 2014-2022, Nucleic Development Team.
+# Copyright (c) 2014-2025, Nucleic Development Team.
 #
 # Distributed under the terms of the BSD 3-Clause License.
 #
 # The full license is in the file LICENSE, distributed with this software.
 # --------------------------------------------------------------------------------------
 import os
+import struct
 import sys
 
 from setuptools.command.build_ext import build_ext
@@ -48,27 +49,35 @@ class CppyBuildExt(build_ext):
                     ext.extra_compile_args.append("-stdlib=libc++")
                     ext.extra_link_args.append("-stdlib=libc++")
             if ct == "msvc":
-                # Switch to a static build for runtimes, but use dynamic
-                # linking for `VCRUNTIME140.dll`, `VCRUNTIME140_1.dll`, and the UCRT.
-                # This avoids requiring specific versions of `MSVCP140.dll`, while
-                # keeping shared state with the rest of the Python process/extensions.
-                is_debug = hasattr(sys, "gettotalrefcount")  # only present in Python debug build
+                # On 32-bits Windows building while statically building MSVCP140
+                # fails so we use this strategyonly for 64-bits builds.
+                if struct.calcsize("P") * 8 == 64:
+                    # Switch to a static build for 64 bits runtimes, but use
+                    # dynamic linking for `VCRUNTIME140.dll`, `VCRUNTIME140_1.dll`,
+                    # and the UCRT. This avoids requiring specific versions of
+                    # `MSVCP140.dll`, while keeping shared state with the rest
+                    # of the Python process/extensions.
 
-                # Mixing debug and release code is bad practice under Windows. The problem is that the
-                # different versions can depend on different fundamental parts of the C++ runtime library,
-                # such as how memory is allocated, structures for things like iterators might be
-                # different, extra code could be generated to perform operations (e.g. checked iterators).
-                # As a consequence we build as debug if python is built with debug symbols.
-                debug_ext = "d" if is_debug else ""
-                ext.extra_compile_args.append(f"/MT{debug_ext}")
-                ext.extra_link_args.extend(
-                    [
-                        f"ucrt{debug_ext}.lib",
-                        f"vcruntime{debug_ext}.lib",
-                        f"/nodefaultlib:libucrt{debug_ext}.lib",
-                        f"/nodefaultlib:libvcruntime{debug_ext}.lib",
-                    ]
-                )
+                    # Mixing debug and release code is bad practice under Windows.
+                    # The problem is that the different versions can depend on
+                    # different fundamental parts of the C++ runtime library,
+                    # such as how memory is allocated, structures for things
+                    # like iterators might be different, extra code could be
+                    # generated to perform operations (e.g. checked iterators).
+                    # As a consequence we build as debug if python is built
+                    # with debug symbols.
+                    is_debug = hasattr(sys, "gettotalrefcount")  # only present in Python debug build
+                    debug_ext = "d" if is_debug else ""
+                    ext.extra_compile_args.append(f"/MT{debug_ext}")
+                    ext.extra_link_args.extend(
+                        [
+                            f"ucrt{debug_ext}.lib",
+                            f"vcruntime{debug_ext}.lib",
+                            f"/nodefaultlib:libucrt{debug_ext}.lib",
+                            f"/nodefaultlib:libvcruntime{debug_ext}.lib",
+                        ]
+                    )
+
                 if os.environ.get("CPPY_DISABLE_FH4"):
                     # Disable FH4 Exception Handling implementation so that we don't
                     # require VCRUNTIME140_1.dll. For more details, see:
